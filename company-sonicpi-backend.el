@@ -79,6 +79,13 @@
     "with_timing_guarantees" "with_transpose" "with_tuning")
   )
 
+(defvar sonicpi-ruby-completions
+  '(
+    "all?" "any?" "append" "assoc" "at" "bsearch" "bsearch_index" "clear" "collect" "collect!" "combination" "compact" "compact!" "concat" "count" "cycle" "delete" "delete_at" "delete_if" "difference" "dig" "drop" "drop_while" "each" "each_index" "empty?" "eql?" "fetch" "fill" "filter" "filter!" "find_index" "first" "flatten" "flatten!" "hash" "include?" "index" "initialize_copy" "insert" "inspect" "join" "keep_if" "last" "length" "map" "map!" "max" "min" "none?" "one?" "pack" "permutation" "pop" "prepend" "product" "push" "rassoc" "reject" "reject!" "repeated_combination" "repeated_permutation" "replace" "reverse" "reverse!" "reverse_each" "rindex" "rotate" "rotate!" "sample" "select" "select!" "shift" "shuffle" "shuffle!" "size" "slice" "slice!" "sort" "sort!" "sort_by!" "sum" "take" "take_while" "to_a" "to_ary" "to_h" "to_s" "transpose" "union" "uniq" "uniq!" "unshift" "values_at" "zip" "each_with_index" "each_with_object" "chunk" "chunk_while" "collect" "collect_concat" "each_cons" "each_entry" "each_slice" "slice_after" "slice_before" "slice_when"
+    ))
+
+
+
 (defun company-sonicpi-backend (command &optional arg &rest ignored)
    (interactive (list 'interactive))
 
@@ -90,7 +97,8 @@
      (remove-if-not
        (lambda (c) (string-prefix-p arg c))
        (append sonicpi-sample-completions sonicpi-fn-completions
-    	       sonicpi-synths-completions sonicpi-fx-completions)
+    	       sonicpi-synths-completions sonicpi-fx-completions
+	       sonicpi-ruby-completions)
         )))
    )
 
